@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice1</title>
+</head>
+<body>
+
+    <h1>HELLO BIG BOYS</h1>
+    <P></P>
+    <script>
+        // Function to check if a number is prime
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        // Function to find the first n prime numbers
+        function findPrimes(n) {
+            const primes = [];
+            let count = 0;
+            let num = 2; // Start checking from the first prime number
+
+            while (count < n) {
+                if (isPrime(num)) {
+                    primes.push(num);
+                    count++;
+                }
+                num++;
+            }
+            return primes;
+        }
+
+        // Example usage: Find the first 10 prime numbers
+        const firstTenPrimes = findPrimes(10);
+        console.log(firstTenPrimes); // Output: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+    </script>
+    
+</body>
+</html>
